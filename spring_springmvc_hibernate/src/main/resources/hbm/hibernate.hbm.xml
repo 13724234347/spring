@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <!--
+     class 指定实体类的类名
+     table 指定实体类对应的表名(默认和类名相同)
+     -->
+    <class name="com.tzh.entity.Liucong" table="liucong">
+        <!--
+           id 指定实体类对应的数据表的主键
+           column 指定主键名称
+         -->
+        <id name="id">
+            <!--
+                generator 主键生成器
+            -->
+            <generator class="native"/>
+
+        </id>
+        <!--
+        property 指定一般属性（不是主键）字段对应的数据表的列名
+        name 实体类的属性名
+         -->
+        <property name="name" />
+        <property name="sex"/>
+        <property name="age"/>
+        <property name="addr"/>
+<!--        <set name="roleSet" table="user_role" fetch="join">
+            <key column="user_id"></key>
+            <many-to-many class="com.yr.entity.Role" column="role_id"></many-to-many>
+        </set>-->
+    </class>
+</hibernate-mapping>

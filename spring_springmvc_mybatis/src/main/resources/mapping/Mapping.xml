@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tzh.dao.Mapping">
+
+	<resultMap id="abc" type="User">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="sex" column="sex" />
+		<result property="addr" column="addr" />
+		<result property="age" column="age" />
+	</resultMap>
+
+	<select id="query" resultMap="abc">
+		select * from user;
+	</select>
+
+	<update id="update" parameterType="User">
+		update user
+		<set>
+			name=#{name},
+			sex=#{sex},
+			addr=#{addr},
+			age=#{age}
+			<where>
+				id=#{id}
+			</where>
+		</set>
+	</update>
+
+</mapper>
